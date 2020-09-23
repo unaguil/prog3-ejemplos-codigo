@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class EjemploProperties {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         try (FileReader reader = new FileReader("ejemplo.properties")) {
             // Se crea el objeto y se leen las propiedades del fichero
             Properties properties = new Properties();

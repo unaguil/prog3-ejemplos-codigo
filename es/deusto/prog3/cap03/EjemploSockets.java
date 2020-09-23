@@ -89,7 +89,7 @@ public class EjemploSockets {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Comprobamos si se han recibido suficientes argumentos
         // en la línea de comandos
         if (args.length >= 1) {

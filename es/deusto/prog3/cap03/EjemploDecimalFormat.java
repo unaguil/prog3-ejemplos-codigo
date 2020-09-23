@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class EjemploDecimalFormat {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         double d = 1_234_567.89;  // Los _ se pueden usar para leer mejor los números largos
 		
 		DecimalFormat dfLocale = new DecimalFormat();

@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class EjemploSalida {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Creamos el objeto FileOutputStream usando el constructor 
         // que recibe la ruta al fichero de salida.
 

@@ -11,7 +11,7 @@ import java.util.Locale;
 
 public class EjemploLocale {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Obtenemos la fecha/tiempo actual
         ZonedDateTime now = ZonedDateTime.now();
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class EjemploSalidaWriter {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Ahora construimos varios objetos conectados para escribir
         // líneas de texto directamente a un stream de salida a fichero.
 

@@ -13,7 +13,7 @@ public class EjemploRegex {
         "prueba.txt", "prueba2.jpg", "otro.dat", "pedro.doc", "andoni.txt", "dir", "prueba3."
     };
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Significado de la expresión regular:
         // 1. Empieza por: p
         // 2. Le siguen cero o más caracteres: .*

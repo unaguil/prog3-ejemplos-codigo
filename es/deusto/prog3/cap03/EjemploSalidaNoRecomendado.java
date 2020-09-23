@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class EjemploSalidaNoRecomendado {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Creamos el objeto FileOutputStream usando el constructor 
         // que recibe la ruta al fichero de salida.
 

@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class EjemploRandom {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Random r = new Random();
 		System.out.println("Tres enteros aleatorios de 0 a 99:");
 		System.out.println(r.nextInt(100) + ", " + r.nextInt(100) + ", " + r.nextInt(100));

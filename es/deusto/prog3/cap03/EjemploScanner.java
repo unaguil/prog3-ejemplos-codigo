@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class EjemploScanner {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Creamos una instance de la clase y le pasamos
         // el stream de entrada de la consola
         try(Scanner sc = new Scanner(System.in)) {
