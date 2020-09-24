@@ -25,6 +25,7 @@ public class EjemploDecimalFormat {
 		System.out.println( "Formato adhoc real: " + dfManualConDecimales.format( d ));
 		// Ver documentación de java.util.Formatter
 		System.out.println( "Formato a través de " +
-				String.format( "String.format(): #%1$5d# vs. #%2$,12.1f#", 123, d ));
+			String.format( "String.format(): #%1$5d# vs. #%2$,12.1f#", 123, d )
+		);
     }
 }
