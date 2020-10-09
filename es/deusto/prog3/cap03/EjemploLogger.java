@@ -1,6 +1,7 @@
     package es.deusto.prog3.cap03;
 
 import java.util.logging.Logger;
+import java.util.logging.LogManager;
 import java.util.logging.Level;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -24,8 +25,16 @@ public class EjemploLogger {
     public static void main(String[] args) {
         // Cambios el nivel de salida del log para sacar los mensajes
         // FINE-CONFIG-INFO-WARNING-SEVERE
-        Logger.getLogger("").setLevel(Level.FINE);
-        Logger.getLogger("").getHandlers()[0].setLevel(Level.FINE);
+        // Aunque se puede configurar por código el nivel del logger, lo usual es 
+        // hacerlo en un fichero externo 
+        // Logger.getLogger("").setLevel(Level.SEVERE);
+        // Logger.getLogger("").getHandlers()[0].setLevel(Level.SEVERE);
+
+        try (FileInputStream fis = new FileInputStream("es/deusto/prog3/cap03/logger.properties")) {
+            LogManager.getLogManager().readConfiguration(fis);
+        } catch (IOException e) {
+            logger.log(Level.SEVERE, "No se pudo leer el fichero de configuración del logger");
+        }
 
         // Empieza el programa y el los mensajes de log que indican
         // lo que va ocurriendo.
