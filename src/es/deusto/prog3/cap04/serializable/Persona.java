@@ -40,4 +40,9 @@ public class Persona implements Serializable {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Nombre: %s, Apellido: %s, Edad: %d", name, surname, age); 
+    }
 }

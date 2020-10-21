@@ -6,6 +6,10 @@ import java.io.ObjectOutputStream;
 
 import es.deusto.prog3.cap04.serializable.Persona;
 
+// Este programa muestra como es posible utilizar
+// la serializacion para escribir un objeto de forma
+// automática a un fichero de salida en formato binario.
+
 public class EjemploSerializacionSalida {
     
     public static void main(String[] args) {
