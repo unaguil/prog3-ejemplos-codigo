@@ -14,7 +14,7 @@ import java.sql.Statement;
 // consulta básica para obtener el "nombre" y "apellido"
 // de todos los usuarios.
 
-public class EjemploBasicoJDBC {
+public class EjemploJDBCSimple {
 
 	public static void main(String[] args) { 
 		// Antes de conectar con la BD se debe cargar el driver.
