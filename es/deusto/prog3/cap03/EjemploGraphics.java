@@ -22,6 +22,11 @@ import javax.swing.Timer;
 
 public class EjemploGraphics extends JFrame {
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    
     private Timer timer;
     private Canvas canvas;
 
@@ -59,6 +64,10 @@ public class EjemploGraphics extends JFrame {
 
     class Canvas extends JComponent {
 
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
         private int x = 0;
         private int y = 0;
 
