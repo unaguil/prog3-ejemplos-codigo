@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap04;
+package es.deusto.prog3.cap04.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -65,6 +65,11 @@ public class EjemploBasicoJDBC {
 			}
 			
 			rs.close(); // es necesario cerrar el resultado al terminar de usarlo
+
+			// Insertamos una nueva fila en la base de datos
+			int rows = stmt.executeUpdate("INSERT INTO usuarios VALUES ('Albert', 'Einstein', 69)");
+			// el método devuelve el número de filas afectadas por la actualización
+			System.out.print("Filas actualizadas: " + rows);
 			
 			stmt.close(); // Es necesario cerrar el statement si no se usa más
 			

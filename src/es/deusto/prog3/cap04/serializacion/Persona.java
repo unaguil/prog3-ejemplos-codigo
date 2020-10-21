@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap04.serializable;
+package es.deusto.prog3.cap04.serializacion;
 
 import java.io.Serializable;
 

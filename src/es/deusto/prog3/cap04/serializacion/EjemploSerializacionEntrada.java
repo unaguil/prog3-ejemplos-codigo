@@ -1,10 +1,9 @@
-package es.deusto.prog3.cap04;
+package es.deusto.prog3.cap04.serializacion;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-import es.deusto.prog3.cap04.serializable.Persona;
 
 // Este programa muestra cómo se lee un fichero que
 // contiene datos serializados en el formato de Java.
