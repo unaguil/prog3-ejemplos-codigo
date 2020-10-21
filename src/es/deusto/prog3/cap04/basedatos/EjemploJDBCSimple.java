@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 
 // En este programa se muestran los pasos para
 // conectar a una base de datos SQLite ya existente.
@@ -13,6 +14,11 @@ import java.sql.Statement;
 // Una vez conectado a la base de datos, se hace una
 // consulta básica para obtener el "nombre" y "apellido"
 // de todos los usuarios.
+
+// ¡¡¡¡ Cuidado !!!!
+// La forma de construir la sentencia para introducir datos es
+// insegura bajo ataques de inyección SQL. 
+
 
 public class EjemploJDBCSimple {
 
@@ -66,10 +72,28 @@ public class EjemploJDBCSimple {
 			
 			rs.close(); // es necesario cerrar el resultado al terminar de usarlo
 
-			// Insertamos una nueva fila en la base de datos
-			int rows = stmt.executeUpdate("INSERT INTO usuarios VALUES ('Albert', 'Einstein', 69)");
-			// el método devuelve el número de filas afectadas por la actualización
-			System.out.print("Filas actualizadas: " + rows);
+			// Insertamos una nueva fila en la base de datos. Leemos los datos de la entrada.
+			try (Scanner sc = new Scanner(System.in)) {
+				System.out.println();
+				System.out.println();
+				System.out.println("Datos del nuevo usuario:");
+				System.out.print("Nombre: ");
+				String name = sc.nextLine();
+
+				System.out.print("Apellido: ");
+				String surname = sc.nextLine();
+
+				System.out.print("Edad: ");
+				int age = sc.nextInt();
+
+				// Se construye la sentencia SQL con los datos introducidos por el usuario
+				String sql = String.format("INSERT INTO usuarios VALUES ('%s', '%s', %d)", name, surname, age);
+				System.out.println("Ejecutando: " + sql);		
+				int rows = stmt.executeUpdate(sql);
+
+				// el método devuelve el número de filas afectadas por la actualización
+				System.out.print("Filas actualizadas: " + rows);
+			}
 			
 			stmt.close(); // Es necesario cerrar el statement si no se usa más
 			
