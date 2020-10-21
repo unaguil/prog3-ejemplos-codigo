@@ -39,7 +39,7 @@ public class EjemploBasicoJDBC {
 		// jdbc:sqlite:ruta_al_fichero
 		
 		try {
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:ejemplo.db");
+			Connection conn = DriverManager.getConnection("jdbc:sqlite:ficheros/ejemplo.db");
 			
 			// A partir de una conexión activa obtenemos el objeto para ejecutar
 			// sentencias SQL en la base de datos.

@@ -11,7 +11,7 @@ import java.io.IOException;
 public class EjemploProperties {
 
     public static void main(String[] args) {
-        try (FileReader reader = new FileReader("./es/deusto/prog3/cap03/ejemplo.properties")) {
+        try (FileReader reader = new FileReader("ficheros/ejemplo.properties")) {
             // Se crea el objeto y se leen las propiedades del fichero
             Properties properties = new Properties();
             properties.load(reader);

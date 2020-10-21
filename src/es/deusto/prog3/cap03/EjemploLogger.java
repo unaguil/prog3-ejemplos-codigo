@@ -30,7 +30,7 @@ public class EjemploLogger {
         // Logger.getLogger("").setLevel(Level.SEVERE);
         // Logger.getLogger("").getHandlers()[0].setLevel(Level.SEVERE);
 
-        try (FileInputStream fis = new FileInputStream("es/deusto/prog3/cap03/logger.properties")) {
+        try (FileInputStream fis = new FileInputStream("ficheros/logger.properties")) {
             LogManager.getLogManager().readConfiguration(fis);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "No se pudo leer el fichero de configuración del logger");
