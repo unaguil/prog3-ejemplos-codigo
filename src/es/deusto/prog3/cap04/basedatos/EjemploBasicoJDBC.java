@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap04.db;
+package es.deusto.prog3.cap04.basedatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
