@@ -20,7 +20,7 @@ import java.util.Scanner;
 // insegura bajo ataques de inyección SQL. 
 
 
-public class EjemploJDBCSimple {
+public class EjemploJDBCNoSeguro {
 
 	public static void main(String[] args) { 
 		// Antes de conectar con la BD se debe cargar el driver.
