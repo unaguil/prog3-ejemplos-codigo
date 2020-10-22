@@ -15,6 +15,8 @@ import java.util.Scanner;
 // Una vez conectado a la base de datos, se hace una
 // consulta básica para obtener el "nombre" y "apellido"
 // de todos los usuarios.
+// También se hace una insert con datos introducidos por
+// el usuario en la consola.
 
 public class EjemploJDBC {
 
