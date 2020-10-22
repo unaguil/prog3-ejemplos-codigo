@@ -69,6 +69,10 @@ public class DBExample {
             // entre ejecuciones del programa, pero sirve como ejemplo.
             dbManager.dropUserTable();
 
+
+            // Se cierra la conexión a la base de datos.
+            dbManager.disconnect();
+
         } catch (DBException e) {
             System.out.println("Error. Se ha producido un error al acceder a la base de datos.");
             // Imprimimos la pila de llamadas para poder depurar los posibles errores.
