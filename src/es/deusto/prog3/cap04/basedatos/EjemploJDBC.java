@@ -68,42 +68,42 @@ public class EjemploJDBC {
 					System.out.println("No se ha podido ejecutar la sentencia SQL." + e.getMessage());
 				}
 
-				// Insertamos una nueva fila en la base de datos. Leemos los datos de la entrada.
-				try (Scanner sc = new Scanner(System.in)) {
-					System.out.println();
-					System.out.println();
-					System.out.println("Datos del nuevo usuario:");
-					System.out.print("Nombre: ");
-					String name = sc.nextLine();
-
-					System.out.print("Apellido: ");
-					String surname = sc.nextLine();
-
-					System.out.print("Edad: ");
-					int age = sc.nextInt();
-
-					// Se construye la sentencia SQL con los datos introducidos por el usuario
-					// Se utiliza un PreparedStatement que evita los problemas al concatenar datos
-					// También evita que haya que poner las comillas manualmente
-
-					try (PreparedStatement insert = conn.prepareStatement("INSERT INTO usuarios VALUES (?, ?, ?)")) {
-						// Se rellenan los huecos de la PreparedStatement con los datos
-						insert.setString(1, name);
-						insert.setString(2, surname);
-						insert.setInt(3, age);
-
-						System.out.println("Ejecutando: " + insert);		
-						int rows = insert.executeUpdate();
-
-						// el método devuelve el número de filas afectadas por la actualización
-						System.out.print("Filas actualizadas: " + rows);
-					} catch (SQLException e) {
-						System.out.println("Error. No se han podido insertar los datos. " + e.getMessage());
-					}
-				}
 			} catch (SQLException e) {
 				// No se ha podido obtener la conexión a la base de datos
 				System.out.println("Error. No se ha podido crear el statement " + e.getMessage());
+			}
+
+			// Insertamos una nueva fila en la base de datos. Leemos los datos de la entrada.
+			try (Scanner sc = new Scanner(System.in)) {
+				System.out.println();
+				System.out.println();
+				System.out.println("Datos del nuevo usuario:");
+				System.out.print("Nombre: ");
+				String name = sc.nextLine();
+
+				System.out.print("Apellido: ");
+				String surname = sc.nextLine();
+
+				System.out.print("Edad: ");
+				int age = sc.nextInt();
+
+				// Se construye la sentencia SQL con los datos introducidos por el usuario
+				// Se utiliza un PreparedStatement que evita los problemas al concatenar datos
+				// También evita que haya que poner las comillas manualmente
+
+				try (PreparedStatement insert = conn.prepareStatement("INSERT INTO usuarios VALUES (?, ?, ?)")) {
+					// Se rellenan los huecos de la PreparedStatement con los datos
+					insert.setString(1, name);
+					insert.setString(2, surname);
+					insert.setInt(3, age);
+
+					int rows = insert.executeUpdate();
+
+					// el método devuelve el número de filas afectadas por la actualización
+					System.out.print("Filas actualizadas: " + rows);
+				} catch (SQLException e) {
+					System.out.println("Error. No se han podido insertar los datos. " + e.getMessage());
+				}
 			}
 			
 		} catch (SQLException e) {
