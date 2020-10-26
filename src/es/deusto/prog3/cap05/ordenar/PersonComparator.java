@@ -1,6 +1,5 @@
 package es.deusto.prog3.cap05.ordenar;
 
-import es.deusto.prog3.cap05.contiene.Person;
 import java.util.Comparator;
 
 public class PersonComparator implements Comparator<Person> {
