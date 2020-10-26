@@ -25,6 +25,11 @@ public class Person {
     }
 
     @Override
+    public String toString() {
+        return String.format("%s, %s, %s", id, name, surname);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person))
             return false;
