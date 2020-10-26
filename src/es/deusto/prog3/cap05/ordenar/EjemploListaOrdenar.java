@@ -37,7 +37,7 @@ public class EjemploListaOrdenar {
 
         // Ahora ordenamos pero usando el orden natural
         // es decir, la implementación de Comparable en
-        // la clase Persona.
-        Collections.sort(persons);
+        // la clase Persona. Pero en orden inverso.
+        Collections.sort(persons, Collections.reverseOrder());
     }
 }
