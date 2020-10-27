@@ -1,6 +1,6 @@
-package es.deusto.prog3.cap05.lista.ordenar;
+package es.deusto.prog3.cap05.list.contiene;
 
-public class Person implements Comparable<Person> {
+public class Person {
     
     private String id;
     private String name;
@@ -37,10 +37,4 @@ public class Person implements Comparable<Person> {
         Person p = (Person) o;
         return p.id.equals(this.id);
     }
-
-    @Override
-    public int compareTo(Person p) {
-        return this.getId().compareTo(p.getId());
-    }
-
 }

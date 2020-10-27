@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.lista.ordenar;
+package es.deusto.prog3.cap05.list.ordenar;
 
 import java.util.Comparator;
 
