@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.ordenar;
+package es.deusto.prog3.cap05.lista.ordenar;
 
 public class Person implements Comparable<Person> {
     

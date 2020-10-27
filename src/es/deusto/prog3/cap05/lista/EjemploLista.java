@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05;
+package es.deusto.prog3.cap05.lista;
 
 import java.util.List;
 import java.util.ArrayList;

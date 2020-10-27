@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.contiene;
+package es.deusto.prog3.cap05.lista.contiene;
 
 public class Person {
     
