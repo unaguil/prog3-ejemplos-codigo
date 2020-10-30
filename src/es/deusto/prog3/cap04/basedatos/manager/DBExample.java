@@ -15,7 +15,7 @@ public class DBExample {
         DBManager dbManager = new DBManager();
         try {
             System.out.println("Conectando con la base de datos...");
-            dbManager.connect("manager.db");
+            dbManager.connect("ficheros/manager.db");
 
             // Creamos la tabla de usuario al iniciar el programa.
             dbManager.createUserTable();
