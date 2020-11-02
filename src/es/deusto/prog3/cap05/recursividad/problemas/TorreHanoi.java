@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.recursividad.ejercicios;
+package es.deusto.prog3.cap05.recursividad.problemas;
 
 // Este programa resuelve el problema de la Torre de Hanoi
 // de manera recursiva utilizando recursividad múltiple.

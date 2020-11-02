@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.recursividad.ejercicios;
+package es.deusto.prog3.cap05.recursividad.problemas;
 
 // Este programa implementa un algoritmo recursivo
 // para generar las cadenas de longitud N obtenidas
