@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.map;
+package es.deusto.prog3.cap05.collections.map;
 
 import java.util.Map.Entry;
 import java.util.HashMap;

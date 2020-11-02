@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.enumeraciones;
+package es.deusto.prog3.cap05.otros.enumeraciones;
 
 // En este ejemplo se muestra el uso de un enum
 // para representar un grupo de constantes relacionadas.

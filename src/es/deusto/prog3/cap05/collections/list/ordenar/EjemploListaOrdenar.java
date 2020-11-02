@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.list.ordenar;
+package es.deusto.prog3.cap05.collections.list.ordenar;
 
 import java.util.ArrayList;
 import java.util.Collections;

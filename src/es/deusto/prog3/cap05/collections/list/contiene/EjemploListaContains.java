@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.list.contiene;
+package es.deusto.prog3.cap05.collections.list.contiene;
 
 import java.util.List;
 import java.util.ArrayList;

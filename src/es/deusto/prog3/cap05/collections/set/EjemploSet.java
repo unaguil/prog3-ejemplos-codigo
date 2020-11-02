@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.set;
+package es.deusto.prog3.cap05.collections.set;
 
 import java.util.Set;
 import java.util.HashSet;
