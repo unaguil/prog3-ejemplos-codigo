@@ -46,18 +46,18 @@ public class Mandelbrot extends JFrame {
 
         // Implementación recursiva de las iteraciones en el
         // conjunto de Julia
-        private int juliaRec(Complex z, Complex c, int n, int max_iter) {
-            // Caso base
-            if (n == max_iter || z.abs() > 10) 
-                return n;
+        // private int juliaRec(Complex z, Complex c, int n, int max_iter) {
+        //     // Caso base
+        //     if (n == max_iter || z.abs() > 10) 
+        //         return n;
 
-            // caso recursivo
-            return mandelbrotRec(z.mult(z).add(c), c, n + 1, max_iter);
-        }
+        //     // caso recursivo
+        //     return mandelbrotRec(z.mult(z).add(c), c, n + 1, max_iter);
+        // }
 
-        private int julia(Complex z, int max_iter) {
-            return juliaRec(z, new Complex(-0.1, 0.65), 0, max_iter);
-        }
+        // private int julia(Complex z, int max_iter) {
+        //     return juliaRec(z, new Complex(-0.1, 0.65), 0, max_iter);
+        // }
 
         private final static float X_POS = -0.5f; // zona a mostrar
         private final static float Y_POS = 0.0f; // 
