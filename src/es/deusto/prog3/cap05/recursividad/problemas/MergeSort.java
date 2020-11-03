@@ -15,6 +15,9 @@ public class MergeSort {
     public static void mergeSortRec(int[] array, int start, int end) {
         // caso base - array de un elemento -> ya está ordenado
         if (end - start < 1) return;
+
+        // caso recursivo:
+        
         // obtener el punto medio para dividir
         int middle = (end - start) / 2 + start;
 
