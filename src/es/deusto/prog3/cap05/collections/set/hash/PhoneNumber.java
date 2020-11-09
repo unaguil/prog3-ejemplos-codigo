@@ -48,9 +48,9 @@ public class PhoneNumber {
         }
 
         PhoneNumber phoneNumber = (PhoneNumber) o;
-        return this.area == phoneNumber.area &&
-            this.prefix == phoneNumber.prefix &&
-            this.lineNum == phoneNumber.lineNum;        
+        return this.area.equals(phoneNumber.area) &&
+            this.prefix.equals(phoneNumber.prefix) &&
+            this.lineNum.equals(phoneNumber.lineNum);        
     }
 
     // Además, al implementar el equals se debe implementar
