@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.estructuras;
+package es.deusto.prog3.cap05.estructuras.listas;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
