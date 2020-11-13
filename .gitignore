@@ -5,3 +5,4 @@ manager.db
 *.log
 
 .vscode
+output.csv
