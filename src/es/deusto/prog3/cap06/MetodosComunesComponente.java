@@ -22,7 +22,6 @@ public class MetodosComunesComponente extends JFrame {
 
     public MetodosComunesComponente() {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(320, 240);
         setTitle("Ejemplo Swing");
 
         JPanel mainPanel = new JPanel(new BorderLayout());
@@ -47,15 +46,18 @@ public class MetodosComunesComponente extends JFrame {
         middlePanel.add(textField);
         mainPanel.add(middlePanel, BorderLayout.CENTER);
 
+        // listener del boton
         actionButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                // se habilita/deshabilita el textfield
                 textField.setEnabled(!textField.isEnabled());
             }
 
         });
 
+        pack();
         setVisible(true);
     }
 
