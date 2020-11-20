@@ -3,6 +3,7 @@ package es.deusto.prog3.cap06;
 import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.time.LocalDate;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -32,9 +33,9 @@ public class EjemploComboBoxJList extends JFrame {
 
         // datos de ejemplo
         Person[] persons = { 
-            new Person("Enrico", "Fermi", "29/09/1901"), 
-            new Person("Albert", "Einstein", "14/03/1879"),
-            new Person("Marie", "Curie", "07/11/1867") 
+            new Person("Enrico", "Fermi", LocalDate.of(1901, 9, 29)), 
+            new Person("Albert", "Einstein", LocalDate.of(1879, 4, 14)),
+            new Person("Marie", "Curie", LocalDate.of(1867, 11, 07))
         };
 
         // se debe especificar el tipo de dato que se asocia

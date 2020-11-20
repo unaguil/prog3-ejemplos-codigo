@@ -1,12 +1,14 @@
 package es.deusto.prog3.cap06;
 
+import java.time.LocalDate;
+
 public class Person {
 
     private String name;
     private String surname;
-    private String birthdate;
+    private LocalDate birthdate;
 
-    public Person(String name, String surname, String birthdate) {
+    public Person(String name, String surname, LocalDate birthdate) {
         this.name = name;
         this.surname = surname;
         this.birthdate = birthdate;
@@ -28,11 +30,11 @@ public class Person {
         this.surname = surname;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 

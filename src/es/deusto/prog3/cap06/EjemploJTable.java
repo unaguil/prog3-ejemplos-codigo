@@ -6,25 +6,29 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
 import org.jdatepicker.JDatePicker;
-import org.jdatepicker.impl.JDatePanelImpl;
-import org.jdatepicker.impl.JDatePickerImpl;
-import org.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.GregorianCalendar;
 import java.util.List;
 
-
 public class EjemploJTable extends JFrame {
-    
+
     /**
      *
      */
@@ -37,13 +41,13 @@ public class EjemploJTable extends JFrame {
          */
         private static final long serialVersionUID = 1L;
 
-        private String[] headers = { "Nombre", "Apellido", "Nacimiento"};
+        private String[] headers = { "Nombre", "Apellido", "Nacimiento" };
         private List<Person> persons;
 
         public MyTableModel(List<Person> persons) {
             this.persons = persons;
         }
-        
+
         // este método devuelve los nombres
         // de cada columna a la tabla
         @Override
@@ -53,9 +57,13 @@ public class EjemploJTable extends JFrame {
 
         @Override
         @SuppressWarnings("all")
-        public Class getColumnClass(int c) {
-            return String.class;
-        }    
+        public Class getColumnClass(int column) {
+            if (column == 2) {
+                return LocalDate.class;
+            } else {
+                return String.class;
+            }
+        }
 
         // devuelve el número de filas en el modelo de datos
         @Override
@@ -68,9 +76,12 @@ public class EjemploJTable extends JFrame {
         public Object getValueAt(int row, int column) {
             Person p = persons.get(row);
             switch (column) {
-                case 0: return p.getName();
-                case 1: return p.getSurname();
-                case 2: return p.getBirthDate();
+                case 0:
+                    return p.getName();
+                case 1:
+                    return p.getSurname();
+                case 2:
+                    return p.getBirthDate();
             }
 
             return null;
@@ -92,16 +103,17 @@ public class EjemploJTable extends JFrame {
         }
 
         public void setValueAt(Object value, int row, int column) {
-            String s = (String) value;
-            
             Person p = persons.get(row);
             switch (column) {
-                case 0: p.setName(s);
-                        break;
-                case 1: p.setSurname(s);
-                        break;
-                case 2: p.setBirthdate(s);
-                        break;
+                case 0:
+                    p.setName((String) value);
+                    break;
+                case 1:
+                    p.setSurname((String) value);
+                    break;
+                case 2:
+                    p.setBirthdate((LocalDate) value);
+                    break;
             }
 
             // se actualiza la tabla visual
@@ -121,19 +133,72 @@ public class EjemploJTable extends JFrame {
         private ImageIcon unselectedIcon;
 
         public NameCellRenderer() {
-            selectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon.png"));
-            unselectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon.png"));
+            selectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon-16.png"));
+            unselectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon-16.png"));
             setOpaque(true);
         }
 
         @Override
-        public Component getTableCellRendererComponent(JTable table, Object color, boolean isSelected, boolean hasFocus, int row, int column) {
+        public Component getTableCellRendererComponent(JTable table, Object color, boolean isSelected, boolean hasFocus,
+                int row, int column) {
             setIcon(isSelected ? selectedIcon : unselectedIcon);
-            
+
             String value = (String) table.getValueAt(row, column);
             setText(value);
 
             return this;
+        }
+
+    }
+
+    class DateCellRenderer extends DefaultTableCellRenderer {
+
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
+        private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+
+        public void setValue(Object value) {
+            LocalDate localTime = (LocalDate) value;
+            setText(localTime.format(formatter));
+        }
+    }
+
+    class DateCellEditor extends AbstractCellEditor implements TableCellEditor, ActionListener {
+
+        /**
+         *
+         */
+        private static final long serialVersionUID = 1L;
+
+        private LocalDate currentValue;
+        private JDatePicker datePicker;
+
+        public DateCellEditor() {
+            currentValue = LocalDate.of(2020, 11, 20);
+        }
+
+        @Override
+        public Object getCellEditorValue() {
+            return currentValue;
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+            datePicker = new JDatePicker();
+            datePicker.addActionListener(this);
+            return datePicker;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GregorianCalendar calendar = (GregorianCalendar) datePicker.getModel().getValue();
+            ZonedDateTime zonedDateTime = calendar.toZonedDateTime();
+            currentValue = zonedDateTime.toLocalDate();
+
+            fireEditingStopped();
         }
 
     }
@@ -144,9 +209,9 @@ public class EjemploJTable extends JFrame {
 
         // datos de ejemplo
         Person[] persons = { 
-            new Person("Enrico", "Fermi", "29/09/1901"), 
-            new Person("Albert", "Einstein", "14/03/1879"),
-            new Person("Marie", "Curie", "07/11/1867") 
+            new Person("Enrico", "Fermi", LocalDate.of(1901, 9, 29)), 
+            new Person("Albert", "Einstein", LocalDate.of(1879, 4, 14)),
+            new Person("Marie", "Curie", LocalDate.of(1867, 11, 07))
         };
 
         MyTableModel tableModel = new MyTableModel(Arrays.asList(persons));
@@ -154,6 +219,10 @@ public class EjemploJTable extends JFrame {
 
         TableColumn nameColumn = table.getColumnModel().getColumn(0);
         nameColumn.setCellRenderer(new NameCellRenderer());
+
+        TableColumn birthdateColumn = table.getColumnModel().getColumn(2);
+        birthdateColumn.setCellRenderer(new DateCellRenderer());
+        birthdateColumn.setCellEditor(new DateCellEditor());
 
         // la tabla se añade en un scroll pane para poder
         // navegar por las filas
