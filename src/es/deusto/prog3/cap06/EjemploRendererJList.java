@@ -10,6 +10,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.ListSelectionModel;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.util.Arrays;
 import java.util.Collection;
@@ -52,16 +53,28 @@ public class EjemploRendererJList extends JFrame {
         private ImageIcon selectedIcon;
         private ImageIcon unselectedIcon;
 
+        private Color defaultBackground;
+
         public MyCellRenderer() {
             selectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon.png"));
             unselectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon.png"));
+
+            setOpaque(true);
+            defaultBackground = getBackground();
         }
 
         @Override
         public Component getListCellRendererComponent(JList<? extends Person> list, Person value, int index,
                 boolean isSelected, boolean hasFocus) {
             setText(value.toString());
-            setIcon(isSelected ? selectedIcon : unselectedIcon);
+
+            if (isSelected) {
+                setIcon(selectedIcon);
+                setBackground(Color.LIGHT_GRAY);
+            } else {
+                setIcon(unselectedIcon);
+                setBackground(defaultBackground);
+            }
 
             return this;
         }
