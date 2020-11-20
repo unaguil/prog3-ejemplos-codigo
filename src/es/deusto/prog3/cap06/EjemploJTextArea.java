@@ -11,6 +11,9 @@ import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Este ejemplo muestra cómo se utiliza un JTextArea
+ */
 public class EjemploJTextArea extends JFrame {
 
     /**

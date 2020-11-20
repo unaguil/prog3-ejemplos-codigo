@@ -13,6 +13,9 @@ import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 
+/**
+ * Este ejemplo muestra el uso de distintos componentes
+ */
 public class EjemploVariosComponentes extends JFrame {
 
     /**
@@ -37,8 +40,10 @@ public class EjemploVariosComponentes extends JFrame {
         SpinnerModel spinnerModel = new SpinnerListModel(days);
         JSpinner spinner = new JSpinner(spinnerModel);
 
+        // se crea una barra de progreso de 0 a 100
+        // que será actualizada por el thread
         JProgressBar progressBar = new JProgressBar(0, 100);
-        progressBar.setStringPainted(true);
+        progressBar.setStringPainted(true); // muestra el número y porcentaje
 
         JButton startButton = new JButton("Iniciar thread");
         startButton.addActionListener(new ActionListener() {

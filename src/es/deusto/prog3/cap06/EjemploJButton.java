@@ -10,7 +10,10 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-
+/**
+ * En este ejemplo se muestran distintos métodos
+ * básicos del componente visual JButton.
+ */
 public class EjemploJButton extends JFrame {
     
     /**

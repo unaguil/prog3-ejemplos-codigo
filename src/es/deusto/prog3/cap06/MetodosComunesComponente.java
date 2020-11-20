@@ -12,7 +12,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
-
+/**
+ * Este ejmplo muestra el uso de distintos métodos comunes
+ * a todos los componentes visuales al heredar de Component.
+ */
 public class MetodosComunesComponente extends JFrame {
     
     /**

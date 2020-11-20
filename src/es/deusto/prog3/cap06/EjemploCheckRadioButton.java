@@ -14,6 +14,11 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Este ejemplo muestra las funcionalidades de los
+ * componentes de tipo check button y de tipo
+ * radio button. 
+ */
 public class EjemploCheckRadioButton extends JFrame {
 
     /**

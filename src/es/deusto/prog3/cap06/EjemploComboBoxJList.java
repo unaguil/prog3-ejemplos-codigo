@@ -20,6 +20,15 @@ import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+/**
+ * Este ejemplo muestra cómo se utiliza un componente
+ * de tipo combo box y un jlist para seleccionar entre distintos
+ * valores de una lista. El componente utiliza un modelo
+ * de datos que contiene la información a visualizar.
+ * 
+ * Esta clase de modelo puede ser extendida para adaptarla
+ * a las necesidades de los datos que se quieran mostrar.
+ */
 public class EjemploComboBoxJList extends JFrame {
 
     /**
@@ -55,6 +64,8 @@ public class EjemploComboBoxJList extends JFrame {
 
             @Override
             public void itemStateChanged(ItemEvent e) {
+                // se comprueba si se ha seleccionado o deseleccionado
+                // un elemento de la lista
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     System.out.println("Seleccionado: " + e.getItem());
                 }
@@ -67,12 +78,17 @@ public class EjemploComboBoxJList extends JFrame {
         });
 
         // se crea el modelo de la lista usando la clase existente en el API
+        // el modelo de datos en Java 8 no tienen métodos para añadir una
+        // lista de datos de una vez, por eso se hace elemento a elemento.
+        // se podría extender el modelo para añadir estos métodos de utilidad
         DefaultListModel<Person> listModel = new DefaultListModel<>();
         for (Person p : persons) {
             listModel.addElement(p);
         }
 
         JList<Person> list = new JList<>(listModel);
+        
+        //en este caso 
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // listener de seleccion en el jlist

@@ -10,6 +10,10 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 
 
+/**
+ * Este ejemplo muestra distintos diálogos que pueden
+ * ser mostrados al usuario 
+ */
 public class EjemploDialogos extends JFrame {
     
     /**
@@ -29,6 +33,7 @@ public class EjemploDialogos extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                // para mostrar mensajes de error
                 JOptionPane.showMessageDialog(EjemploDialogos.this, "Se ha producido un error", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
@@ -40,6 +45,7 @@ public class EjemploDialogos extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                // para mostrar mensajes de información.
                 JOptionPane.showMessageDialog(EjemploDialogos.this, "Mensaje al usuario", "Información", JOptionPane.INFORMATION_MESSAGE);
             }
 
@@ -51,6 +57,9 @@ public class EjemploDialogos extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                // un mensaje de confirmación con botones si/no
+                // en este caso es necesario comprobar la respuesta que
+                // ha seleccionado el usuario
                 int response = JOptionPane.showConfirmDialog(EjemploDialogos.this, "¿Está seguro?", "Confirmar", JOptionPane.YES_NO_OPTION);
                 if (response == JOptionPane.YES_OPTION) {
                     System.out.println("El usuario ha elegido: SI");

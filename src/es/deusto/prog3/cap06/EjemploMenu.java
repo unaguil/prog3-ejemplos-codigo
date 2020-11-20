@@ -12,6 +12,10 @@ import javax.swing.JRadioButtonMenuItem;
 import java.awt.event.KeyEvent;
 
 
+/**
+ * Este ejemplo muestra el uso de los menús
+ * de aplicación
+ */
 public class EjemploMenu extends JFrame {
     
     /**

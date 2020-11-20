@@ -11,7 +11,10 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collection;
 
-
+/**
+ * Este ejemplo muestra cómo se puede crear un modelo
+ * de datos propio para un JList.
+ */
 public class EjemploModeloJList extends JFrame {
     
     /**

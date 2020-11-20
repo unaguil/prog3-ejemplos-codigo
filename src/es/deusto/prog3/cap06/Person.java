@@ -2,6 +2,9 @@ package es.deusto.prog3.cap06;
 
 import java.time.LocalDate;
 
+/**
+ * Clase utilizada para contener datos de ejemplo
+ */
 public class Person {
 
     private String name;
