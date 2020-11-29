@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap03;
+package es.deusto.prog3.cap03.api;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,8 +16,8 @@ import java.util.Scanner;
 // ¡Atención! Este ejemplo no usa threads y el servidor se queda bloqueado hasta
 // recibir un mensaje del cliente.
 
-// Para lanzar el server: java es.deusto.prog3.cap03.EjemploSockets --server port
-// Para lanzar el cliente: java es.deusto.prog3.cap03.EjemploSockets --client ip port
+// Para lanzar el server: java es.deusto.prog3.cap03.api.EjemploSockets --server port
+// Para lanzar el cliente: java es.deusto.prog3.cap03.api.EjemploSockets --client ip port
 
 
 public class EjemploSockets {

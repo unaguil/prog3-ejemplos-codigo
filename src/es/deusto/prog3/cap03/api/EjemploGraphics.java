@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap03;
+package es.deusto.prog3.cap03.api;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;

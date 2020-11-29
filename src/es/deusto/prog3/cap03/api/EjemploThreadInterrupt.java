@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap03;
+package es.deusto.prog3.cap03.api;
 
 
 // En este ejemplo se muestra el proceso de un nuevo hilo

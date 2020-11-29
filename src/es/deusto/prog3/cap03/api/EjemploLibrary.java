@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap03;
+package es.deusto.prog3.cap03.api;
 
 import es.deusto.prog3.Student;
 
@@ -16,7 +16,7 @@ import es.deusto.prog3.Student;
 // javac -cp external_library/example-lib.jar es/deusto/prog3/cap03/EjemploLibrary.java
 
 // Para lanzar el programa en la JVM se debe indicar también.
-// java -cp external_library/example-lib.jar es.deusto.prog3.cap03.EjemploLibrary
+// java -cp external_library/example-lib.jar es.deusto.prog3.cap03.api.EjemploLibrary
 
 
 public class EjemploLibrary {

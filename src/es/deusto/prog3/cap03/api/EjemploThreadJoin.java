@@ -1,29 +1,29 @@
-package es.deusto.prog3.cap03;
+package es.deusto.prog3.cap03.api;
 
 
-// Este ejemplo muestra como crear un nuevo hilo de ejecución
-// para realizar una tarea de forma concurrente al hilo del
-// programa principal.
+// En este ejemplo se muestra como se puede esperar a que
+// termine la ejecución de otro hilo antes de continuar.
 
-// Se hace uso también del método Thread.sleep en ambos hilos
-// para dormir los threads.
-
-public class EjemploThread {
+public class EjemploThreadJoin {
 
     public static void main(String[] args) {      
         // Vamos a crear un thread para contar desde 10 a 0.
-        // Además, el hilo se va a dormir después de imprimir cada
+        // El hilo se va a dormir después de imprimir cada
         // valor durante 1000 ms.
+        // En cada vuelta del bucle se comprueba si debemos parar
+        // consultando el flag interrupted.
         Thread t = new Thread(new Runnable() {
 
             @Override
             public void run() {
-                for (int i = 10; i >= 0; i--) {
+                for (int i = 10; !Thread.interrupted() && i >= 0; i--) {
                     System.out.println(Thread.currentThread().getName() + " -> " + i);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        //
+                        // El sleep nos ha capturado el interrumpir
+                        // volvemos a ponerlo para detener el bucle y que muera el thread.
+                        Thread.currentThread().interrupt(); 
                     }
                 }
 
@@ -44,6 +44,16 @@ public class EjemploThread {
                 //
             }
         }
+
+        // Se espera a que el hilo creado termine para continuar.
+        System.out.println("main esperando a que el otro hilo termine..");
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            //
+        }
+        
+        System.out.println("El otro hilo ha terminado. Sigue main");
 
         // Hasta que no terminen el hilo principal (main) y el hilo que
         // hemos creado, el programa sigue en ejecución.

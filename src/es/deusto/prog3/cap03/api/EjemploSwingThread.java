@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap03;
+package es.deusto.prog3.cap03.api;
 
 import javax.swing.SwingUtilities;
 import javax.swing.JButton;
