@@ -17,12 +17,6 @@ public class Persona implements Serializable {
     private String surname;
     private int age;
 
-    // Este constructor sin parámetros es requerido
-    // para que funcione la serialización
-    public Persona() {
-
-    }
-
     public Persona(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
