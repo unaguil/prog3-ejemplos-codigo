@@ -83,6 +83,7 @@ public class PersonTest {
      * Se define una regla de JUnit 4 utiliza para capturar
      * excepciones esperadas en los tests.
      */
+    @SuppressWarnings("deprecation")
     @Rule
     public ExpectedException expected = ExpectedException.none();
 

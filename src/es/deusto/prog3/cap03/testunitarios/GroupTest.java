@@ -46,6 +46,7 @@ public class GroupTest {
         assertEquals(1, g.size());
     }
 
+    @SuppressWarnings("deprecation")
     @Rule
     public ExpectedException expected = ExpectedException.none();
 
