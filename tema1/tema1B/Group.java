@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap03.testunitarios;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap03.testunitarios;
-
 /**
  * Clase utilizara para representar los errores
  * que pueden producirs en los métodos de la clase

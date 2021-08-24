@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap03.testunitarios;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;

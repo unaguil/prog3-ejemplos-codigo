@@ -1,4 +1,4 @@
-Para generar la librería utilizada en los ejemplos del cap03:
+Para generar la librería utilizada en los ejemplos del tema1:
 
 1. Cambiar al directorio src: cd src
 2. Compilar todas las clases del directorio es.deusto.prog3: javac es/deusto/prog3/*.java

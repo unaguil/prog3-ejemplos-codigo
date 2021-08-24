@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap03.api;
-
 import es.deusto.prog3.Student;
 
 // En este ejemplo se muestra cómo se utiliza una librería externa

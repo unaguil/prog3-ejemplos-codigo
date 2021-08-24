@@ -1,0 +1,12 @@
+Parte 0.1 - Parte I
+-------------------
+
+En esta práctica tenemos una única clase que constiye toda la funcionalidad del programa. Además, como los ficheros se han escrito con codificación UTF-8, vamos a indicarle esto al compilador para lo tenga en cuenta.
+
+Compilamos el fichero principal, teniendo en cuenta la codificación en la que ha sido escrito
+
+    javac -encoding UTF-8 Practica0.java
+
+Si hemos compilado la clase sin errores podemos comprobar que tenemos un nuevo fichero .class en el directorio, ahora podemos lanzar la clase compilada haciendo referencia a su "fully qualified name". Como la clase no está en ningún paquete este nombre completamente cualificado será su propio nombre.
+
+    java Practica0

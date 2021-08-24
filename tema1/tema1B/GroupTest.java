@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap03.testunitarios;
-
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
