@@ -1,4 +1,3 @@
-package es.deusto.prog3.cap03.api;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

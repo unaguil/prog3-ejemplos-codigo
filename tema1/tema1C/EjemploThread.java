@@ -1,30 +1,28 @@
-package es.deusto.prog3.cap03.api;
 
 
-// En este ejemplo se muestra el proceso de un nuevo hilo
-// y como se puede interrumpir/detener correctamente un
-// hilo que se encuentra en ejecución.
+// Este ejemplo muestra como crear un nuevo hilo de ejecución
+// para realizar una tarea de forma concurrente al hilo del
+// programa principal.
 
-public class EjemploThreadInterrupt {
+// Se hace uso también del método Thread.sleep en ambos hilos
+// para dormir los threads.
+
+public class EjemploThread {
 
     public static void main(String[] args) {      
         // Vamos a crear un thread para contar desde 10 a 0.
-        // El hilo se va a dormir después de imprimir cada
+        // Además, el hilo se va a dormir después de imprimir cada
         // valor durante 1000 ms.
-        // En cada vuelta del bucle se comprueba si debemos parar
-        // consultando el flag interrupted.
         Thread t = new Thread(new Runnable() {
 
             @Override
             public void run() {
-                for (int i = 10; !Thread.interrupted() && i >= 0; i--) {
+                for (int i = 10; i >= 0; i--) {
                     System.out.println(Thread.currentThread().getName() + " -> " + i);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        // El sleep nos ha capturado el interrumpir
-                        // volvemos a ponerlo para detener el bucle y que muera el thread.
-                        Thread.currentThread().interrupt(); 
+                        //
                     }
                 }
 
@@ -45,11 +43,6 @@ public class EjemploThreadInterrupt {
                 //
             }
         }
-
-        // Vamos a pedirle al thread que se interrumpa 
-
-        System.out.println("Pidiendo al otro thread que pare...");
-        t.interrupt();
 
         // Hasta que no terminen el hilo principal (main) y el hilo que
         // hemos creado, el programa sigue en ejecución.

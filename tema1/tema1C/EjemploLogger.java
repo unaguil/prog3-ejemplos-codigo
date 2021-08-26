@@ -1,5 +1,4 @@
-    package es.deusto.prog3.cap03.api;
-
+    
 import java.util.logging.Logger;
 import java.util.logging.LogManager;
 import java.util.logging.Level;
