@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +45,11 @@ public class GroupTest {
         assertEquals(1, g.size());
     }
 
+    
+    // En el test siguiente se hace uso de una regla de Junit 4
+    // para comprobar que se han lanzado las excepciones experadas.
+    // Se permite que un mismo test realice varias comprobaciones de
+    // de excepciones, ya que no retorna al lanzarse la excepción
     @SuppressWarnings("deprecation")
     @Rule
     public ExpectedException expected = ExpectedException.none();
@@ -52,11 +58,11 @@ public class GroupTest {
      * Comprueba que al añadir una persona al grupo que ya se encuentra se lanza una
      * excepción de tipo GroupException y que el grupo no cambia de tamaño.
      * También comprueba que si se añade una persona null, el tamaño del grupo no
-     * cambia y se lanza una excepcion de tipo NullPointerException
-     *
+     * cambia y se lanza una excepcion de tipo NullPointerException.
+     * @throws GroupException 
      */
     @Test
-    public void testAddPersonErrors() throws GroupException {
+    public void testAddPersonErrorsRule() throws GroupException {
         g.addPerson(new Person("John", "Smith", "23-05-1994"));
         assertEquals(1, g.size());
 
@@ -67,6 +73,55 @@ public class GroupTest {
         expected.expect(NullPointerException.class);
         g.addPerson(null);
         assertEquals(1, g.size());
+    }
+    
+    // En esta segunda implementación del test anterior se hace uso de
+    // los métodos assertThrows que requieren del uso de funciones lambda.
+    // Es la opción recomendada en JUnit 4 y Junit 5 ya que la opción
+    // anterior se encuentra "deprecated".
+    /**
+     * Comprueba que al añadir una persona al grupo que ya se encuentra se lanza una
+     * excepción de tipo GroupException y que el grupo no cambia de tamaño.
+     * También comprueba que si se añade una persona null, el tamaño del grupo no
+     * cambia y se lanza una excepcion de tipo NullPointerException.
+     * @throws GroupException 
+     */
+    @Test
+    public void testAddPersonErrorsLambda() throws GroupException {
+        g.addPerson(new Person("John", "Smith", "23-05-1994"));
+        assertEquals(1, g.size());
+
+        assertThrows(GroupException.class, () -> g.addPerson(new Person("John", "Smith", "23-05-1994")));
+        assertEquals(1, g.size());
+
+        assertThrows(NullPointerException.class, () -> g.addPerson(null));
+        assertEquals(1, g.size());
+    }
+    
+    // Por último, siempre tenemos la posibilidad de realizar la
+    // comprobación de las dos excepciones anteriores por separado
+    // de una forma más sencilla. En este caso, se debe tener en
+    // cuenta que la excepción no se captura dentro y, por lo tanto,
+    // al producirse de termina el método de prueba.
+    // La captura se realiza con el argumento expected de @Test
+    
+    /**
+     * Comprueba el caso de que se produzca la excepción GroupException.
+     */
+    @Test(expected=GroupException.class)
+    public void testAddPersonGroupException() throws GroupException {
+    	 g.addPerson(new Person("John", "Smith", "23-05-1994"));
+         assertEquals(1, g.size());
+         
+         g.addPerson(new Person("John", "Smith", "23-05-1994"));
+    }
+    
+    /**
+     * Comprueba el caso de que se produzca la excepción GroupException.
+     */
+    @Test(expected=NullPointerException.class)
+    public void testAddPersonNullPointerException() throws GroupException {         
+         g.addPerson(null);
     }
 
     /**

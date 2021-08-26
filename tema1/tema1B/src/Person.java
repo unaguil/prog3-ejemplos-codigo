@@ -69,7 +69,7 @@ public class Person {
      * @return la edad de la persona
      */
     public int getAge() {
-        return (int) ChronoUnit.YEARS.between(birthdate, LocalDate.now());
+        return (int) ChronoUnit.YEARS.between(birthdate, LocalDate.of(2020, 12, 31));
     }
 
     /**
