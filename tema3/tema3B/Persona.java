@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap04.serializacion;
-
 import java.io.Serializable;
 
 // Ejemplo de clase serializable por Java

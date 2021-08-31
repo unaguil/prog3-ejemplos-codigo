@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap04.serializacion;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
