@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap04;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
