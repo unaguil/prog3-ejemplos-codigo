@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap04.basedatos.manager;
-
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 

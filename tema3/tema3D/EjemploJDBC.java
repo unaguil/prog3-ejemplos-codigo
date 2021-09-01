@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap04.basedatos;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
