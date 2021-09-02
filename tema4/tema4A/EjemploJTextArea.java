@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap06;
-
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;

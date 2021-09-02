@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap06;
-
 import javax.swing.AbstractCellEditor;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;

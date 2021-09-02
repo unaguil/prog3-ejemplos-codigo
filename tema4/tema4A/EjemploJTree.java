@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap06;
-
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.ImageIcon;

@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap06;
-
 import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
