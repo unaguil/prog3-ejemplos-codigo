@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.otros.argumentos;
-
 // Este ejemplo muestra cómo se pueden utilizar
 // los argumentos variables en un método.
 

@@ -1,5 +1,3 @@
-
-
 // En este ejemplo se muestra el proceso de un nuevo hilo
 // y como se puede interrumpir/detener correctamente un
 // hilo que se encuentra en ejecución.

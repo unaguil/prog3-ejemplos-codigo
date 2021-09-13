@@ -1,28 +1,26 @@
-package es.deusto.prog3.cap05.otros.enumeraciones;
-
 // En este ejemplo se muestra el uso de un enum
 // para representar un grupo de constantes relacionadas.
 
 public class EjemploEnum {
     
     public enum DayOfWeek {
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday,
-        Sunday
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY,
+        SATURDAY,
+        SUNDAY
     }
 
     public static boolean isWeekend(DayOfWeek day) {
         // Comparar el valor de la variable con la constante
-        return day == DayOfWeek.Saturday || day == DayOfWeek.Sunday;
+        return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
     }
 
     public static void main(String[] args) {
         // Podemos declarar variables con el valor de la constante
-        DayOfWeek day = DayOfWeek.Wednesday;
+        DayOfWeek day = DayOfWeek.WEDNESDAY;
 
         // Pasar la variable a un método que reciba el enum
         System.out.println("¿Es fin de semana?: " + isWeekend(day));
@@ -34,16 +32,16 @@ public class EjemploEnum {
 
         // Se pueden usar en los switch
         switch (day) {
-            case Monday:    System.out.println("Es el primer día");
+            case MONDAY:    System.out.println("Es el primer día");
                             break;
 
-            case Tuesday:   System.out.println("Es el segundo día");
+            case TUESDAY:   System.out.println("Es el segundo día");
                             break;
 
-            case Wednesday: System.out.println("Es el tercer día");
+            case WEDNESDAY: System.out.println("Es el tercer día");
                             break;
 
-            case Thursday:  System.out.println("Es el cuarto día");
+            case THURSDAY:  System.out.println("Es el cuarto día");
                             break;
             
             default:        System.out.println("Es el resto de días");
@@ -57,7 +55,7 @@ public class EjemploEnum {
         System.out.println("Ordinal: " + day.ordinal());
 
         // Obtener la constante asociada a partir de su valor String
-        DayOfWeek newDay = DayOfWeek.valueOf("Tuesday");
-        System.out.println(newDay == DayOfWeek.Tuesday);
+        DayOfWeek newDay = DayOfWeek.valueOf("TUESDAY");
+        System.out.println(newDay == DayOfWeek.TUESDAY);
     }
 }

@@ -1,5 +1,3 @@
-
-
 // En este ejemplo se muestra como se puede esperar a que
 // termine la ejecución de otro hilo antes de continuar.
 

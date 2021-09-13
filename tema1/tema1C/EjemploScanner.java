@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 // Este programa lee datos de la consola utilizando

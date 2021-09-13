@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.otros.autoboxing;
-
 // Este ejemplo muestra como Java hace operaciones
 // implícitas de autoboxing que además pueden impactar
 // en el rendimiento.
