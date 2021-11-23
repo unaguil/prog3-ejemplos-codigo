@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.recursividad.problemas;
-
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.recursividad.problemas.fractales;
-
 public class Complex {
  
     private final double re;

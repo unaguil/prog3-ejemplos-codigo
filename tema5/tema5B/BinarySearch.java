@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.recursividad.problemas;
-
 import java.util.Arrays;
 import java.util.Random;
 

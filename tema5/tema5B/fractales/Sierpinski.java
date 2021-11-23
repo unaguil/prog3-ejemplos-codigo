@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.recursividad.problemas.fractales;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
