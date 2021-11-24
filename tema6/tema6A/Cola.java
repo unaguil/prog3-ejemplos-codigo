@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -13,7 +11,7 @@ import java.util.Queue;
 public class Cola {
     
     public static void main(String[] args) {
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
         
         // se encolan los elementos
         for (int i = 0; i < 100; i++) {

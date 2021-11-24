@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras;
-
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -16,7 +14,7 @@ import java.util.LinkedList;
 public class Pila {
 
     public static void main(String[] args) {
-        Deque<Integer> stack = new LinkedList<Integer>();
+        Deque<Integer> stack = new LinkedList<>();
 
         // se apilan los elementos
         for (int i = 0; i < 100; i++) {

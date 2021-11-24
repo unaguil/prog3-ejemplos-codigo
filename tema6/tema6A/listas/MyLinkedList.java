@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras.listas;
-
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;

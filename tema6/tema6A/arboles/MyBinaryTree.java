@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras.arboles;
-
 /**
  * Esta clase implementa una estructura de tipo árbol binario.
  * Cada nodo del árbol puede tener como máximo dos hijos.

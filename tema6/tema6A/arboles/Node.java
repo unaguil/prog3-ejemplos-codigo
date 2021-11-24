@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras.arboles;
-
 /**
  * Clase que representa a los nodos del árbol
  * La clase es pública porque puede ser usada fuera del árbol

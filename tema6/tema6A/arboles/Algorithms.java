@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras.arboles;
-
 import java.util.LinkedList;
 import java.util.Queue;
 

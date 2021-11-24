@@ -1,5 +1,3 @@
-package es.deusto.prog3.cap05.estructuras.arboles;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
