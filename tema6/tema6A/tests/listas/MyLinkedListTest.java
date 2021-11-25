@@ -1,4 +1,6 @@
-package es.deusto.prog3.cap05.estructuras.listas;
+package tests.listas;
+
+import listas.MyLinkedList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

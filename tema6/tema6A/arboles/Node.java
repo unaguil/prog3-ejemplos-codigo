@@ -1,3 +1,5 @@
+package arboles;
+
 /**
  * Clase que representa a los nodos del árbol
  * La clase es pública porque puede ser usada fuera del árbol

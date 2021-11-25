@@ -1,3 +1,5 @@
+package tests.arboles;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
@@ -8,6 +10,10 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import arboles.MyBinaryTree;
+import arboles.Node;
+import arboles.Algorithms;
 
 public class AlgorithmsTest {
 
@@ -69,7 +75,7 @@ public class AlgorithmsTest {
 	 */
 	class MyVisitor implements Algorithms.Visitor<Integer> {
 
-		private List<Integer> visited = new ArrayList<Integer>();
+		private List<Integer> visited = new ArrayList<>();
 		
 		@Override
 		public void visit(Integer value) {
@@ -87,7 +93,7 @@ public class AlgorithmsTest {
 		MyVisitor visitor = new MyVisitor();
 		Algorithms.depthFirst(tree, visitor);
 		
-		List<Integer> expected = Arrays.asList(new Integer[]{1, 3, 5, 6, 7, 9, 15, 16, 20, 30});
+		List<Integer> expected = Arrays.asList(1, 3, 5, 6, 7, 9, 15, 16, 20, 30);
 		assertEquals(expected, visitor.getVisited());
 	}
 	
@@ -96,7 +102,7 @@ public class AlgorithmsTest {
 		MyVisitor visitor = new MyVisitor();
 		Algorithms.depthFirstPre(tree, visitor);
 		
-		List<Integer> expected = Arrays.asList(new Integer[]{15, 5, 3, 1, 7, 6, 9, 20, 16, 30});
+		List<Integer> expected = Arrays.asList(15, 5, 3, 1, 7, 6, 9, 20, 16, 30);
 		assertEquals(expected, visitor.getVisited());
 	}
 	
@@ -105,7 +111,7 @@ public class AlgorithmsTest {
 		MyVisitor visitor = new MyVisitor();
 		Algorithms.depthFirstPost(tree, visitor);
 		
-		List<Integer> expected = Arrays.asList(new Integer[]{1, 3, 6, 9, 7, 5, 16, 30, 20, 15});
+		List<Integer> expected = Arrays.asList(1, 3, 6, 9, 7, 5, 16, 30, 20, 15);
 		assertEquals(expected, visitor.getVisited());
 	}
 	
@@ -115,7 +121,7 @@ public class AlgorithmsTest {
 		MyVisitor visitor = new MyVisitor();
 		Algorithms.breadthFirst(tree, visitor);
 		
-		List<Integer> expected = Arrays.asList(new Integer[]{15, 5, 20, 3, 7, 16, 30, 1, 6, 9});
+		List<Integer> expected = Arrays.asList(15, 5, 20, 3, 7, 16, 30, 1, 6, 9);
 		assertEquals(expected, visitor.getVisited());
 	}
 	
@@ -134,9 +140,9 @@ public class AlgorithmsTest {
 	@Test
 	public void testDepthFirstSearchNull() {
 		MyBinaryTree<Integer> treeWithNull = new MyBinaryTree<>();
-		Node<Integer> root = new Node<Integer>(5);
+		Node<Integer> root = new Node<>(5);
 		treeWithNull.setRoot(root);	
-		root.setLeft(new Node<Integer>(null));
+		root.setLeft(new Node<>(null));
 		
 		Node<Integer> node = Algorithms.depthFirstSearch(treeWithNull, 7);
 		assertNull(node);
