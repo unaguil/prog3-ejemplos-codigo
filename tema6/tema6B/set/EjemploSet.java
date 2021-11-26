@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.set;
+package set;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class EjemploSet {
     
     public static void main(String[] args) {
-        Set<Integer> integers = new HashSet<Integer>();
+        Set<Integer> integers = new HashSet<>();
         
         integers.add(12); // Añadimos objetos al set
         integers.add(5);

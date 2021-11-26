@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.set.hash;
+package set.hash;
 
 // Esta clase representa un número de teléfono
 // con un nombre asociado. Se ha determinado que

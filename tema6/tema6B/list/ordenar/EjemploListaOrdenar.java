@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.list.ordenar;
+package list.ordenar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,7 +12,7 @@ public class EjemploListaOrdenar {
     
     public static void main(String[] args) {
         // Se crea la lista de personas con datos de prueba
-        List<Person> persons = new ArrayList<Person>();
+        List<Person> persons = new ArrayList<>();
 
         persons.add(new Person("345612343A", "Albert", "Einstein"));
         persons.add(new Person("999999999W", "Richard", "Strauss"));

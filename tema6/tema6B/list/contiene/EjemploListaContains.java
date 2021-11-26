@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.list.contiene;
+package list.contiene;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class EjemploListaContains {
     
     public static void main(String[] args) {
         // Se crea la lista de personas con datos de prueba
-        List<Person> personas = new ArrayList<Person>();
+        List<Person> personas = new ArrayList<>();
 
         personas.add(new Person("123456789X", "John", "Doe"));
         personas.add(new Person("345612343A", "Albert", "Einstein"));

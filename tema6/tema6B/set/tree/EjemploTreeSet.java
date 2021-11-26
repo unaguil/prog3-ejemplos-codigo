@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.set.tree;
+package set.tree;
 
 import java.util.Comparator;
 import java.util.NavigableSet;

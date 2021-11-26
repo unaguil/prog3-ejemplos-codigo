@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.set.tree;
+package set.tree;
 
 
 public class Person implements Comparable<Person> {
@@ -38,5 +38,4 @@ public class Person implements Comparable<Person> {
     public int compareTo(Person p) {
         return this.id - p.id;
     }
-
 }

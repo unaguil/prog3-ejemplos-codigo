@@ -1,4 +1,4 @@
-package es.deusto.prog3.cap05.collections.set.hash;
+package set.hash;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +16,7 @@ import java.util.Set;
 public class EjemploHashCode {
     
     public static void main(String[] args) {
-        Set<PhoneNumber> phones = new HashSet<PhoneNumber>();
+        Set<PhoneNumber> phones = new HashSet<>();
 
         phones.add(new PhoneNumber("707", "867", "5309", "Jenny"));
         phones.add(new PhoneNumber("123", "456", "2323", "John"));
