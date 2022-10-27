@@ -34,8 +34,8 @@ public class EjemploJTree extends JFrame {
 
         // renderer utilizado para los iconos de los nodos
         // intermedios (directorios) y de los nodos hoja (ficheros)
-        ImageIcon directoryIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon-16.png"));
-        ImageIcon fileIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon-16.png"));
+        ImageIcon directoryIcon = new ImageIcon(getClass().getResource("/coffee-icon-16.png"));
+        ImageIcon fileIcon = new ImageIcon(getClass().getResource("/pingus-icon-16.png"));
         DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
         renderer.setLeafIcon(fileIcon);
         renderer.setOpenIcon(directoryIcon);
