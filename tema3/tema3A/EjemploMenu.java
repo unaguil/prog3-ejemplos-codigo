@@ -56,16 +56,16 @@ public class EjemploMenu extends JFrame {
         menuBar.add(optionsMenu);
         optionsMenu.setMnemonic(KeyEvent.VK_O);
 
-        JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Opción A", new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon.png")));
+        JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Opción A", new ImageIcon(getClass().getResource("/coffee-icon.png")));
         optionsMenu.add(checkBoxMenuItem);
 
         JMenu subOptions = new JMenu("Más opciones");
         optionsMenu.add(subOptions);
 
-        JRadioButtonMenuItem radioButton1 = new JRadioButtonMenuItem("Opción 1", new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon.png")));
+        JRadioButtonMenuItem radioButton1 = new JRadioButtonMenuItem("Opción 1", new ImageIcon(getClass().getResource("/pingus-icon.png")));
         subOptions.add(radioButton1);
 
-        JRadioButtonMenuItem radioButton2 = new JRadioButtonMenuItem("Opción 2", new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/usb-icon.png")));
+        JRadioButtonMenuItem radioButton2 = new JRadioButtonMenuItem("Opción 2", new ImageIcon(getClass().getResource("/usb-icon.png")));
         subOptions.add(radioButton2);
 
         ButtonGroup radioButtonGroup = new ButtonGroup();

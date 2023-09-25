@@ -28,8 +28,8 @@ public class EjemploJButton extends JFrame {
         bottomPanel.add(mainButton);
         
         // iconos para distintos estados del boton
-        mainButton.setIcon(new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon.png")));
-        mainButton.setDisabledIcon(new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon.png")));
+        mainButton.setIcon(new ImageIcon(getClass().getResource("/coffee-icon.png")));
+        mainButton.setDisabledIcon(new ImageIcon(getClass().getResource("/pingus-icon.png")));
 
         JButton buttonA = new JButton("Botón A");
 

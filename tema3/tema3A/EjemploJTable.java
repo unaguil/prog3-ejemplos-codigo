@@ -181,8 +181,8 @@ public class EjemploJTable extends JFrame {
         // en el constructor se cargan los iconos
         // que se van a mostrar según el estado de la celda
         public NameCellRenderer() {
-            selectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/coffee-icon-16.png"));
-            unselectedIcon = new ImageIcon(getClass().getResource("/es/deusto/prog3/cap06/res/pingus-icon-16.png"));
+            selectedIcon = new ImageIcon(getClass().getResource("/coffee-icon-16.png"));
+            unselectedIcon = new ImageIcon(getClass().getResource("/pingus-icon-16.png"));
 
             // esta propiedad permite que se vea el color de fondo del JLabel
             // por defecto el componente es transparente y no se vería el color

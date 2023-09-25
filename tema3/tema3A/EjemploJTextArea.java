@@ -31,7 +31,7 @@ public class EjemploJTextArea extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
         add(scrollPane, BorderLayout.CENTER);
 
-        JButton printButton = new JButton("Imprimir");
+        JButton printButton = new JButton("Imprimir texto seleccionado");
         printButton.addActionListener(new ActionListener() {
 
             @Override
