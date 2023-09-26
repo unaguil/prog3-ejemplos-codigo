@@ -237,7 +237,9 @@ public class EjemploJTable extends JFrame {
         @Override
         public void setValue(Object value) {
             LocalDate localTime = (LocalDate) value;
-            setText(localTime.format(formatter));
+            if (localTime != null) {
+            	setText(localTime.format(formatter));
+            }
         }
     }
 
