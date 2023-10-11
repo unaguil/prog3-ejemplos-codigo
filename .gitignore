@@ -6,3 +6,4 @@ manager.db
 
 .vscode
 output.csv
+bin/
