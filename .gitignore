@@ -8,3 +8,4 @@ manager.db
 output.csv
 bin/
 *.bin
+*.csv
