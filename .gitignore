@@ -9,3 +9,4 @@ output.csv
 bin/
 *.bin
 *.csv
+*.json
