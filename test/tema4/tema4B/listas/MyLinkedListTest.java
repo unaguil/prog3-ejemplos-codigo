@@ -1,4 +1,4 @@
-package tema4.tema4B.tests.listas;
+package tema4.tema4B.listas;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -8,8 +8,6 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import tema4.tema4B.listas.MyLinkedList;
 
 public class MyLinkedListTest {
 

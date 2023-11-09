@@ -1,4 +1,4 @@
-package tema4.tema4B.tests.arboles;
+package tema4.tema4B.arboles;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -10,10 +10,6 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import tema4.tema4B.arboles.Algorithms;
-import tema4.tema4B.arboles.MyBinaryTree;
-import tema4.tema4B.arboles.Node;
 
 public class AlgorithmsTest {
 
