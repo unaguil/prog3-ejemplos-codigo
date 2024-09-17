@@ -1,5 +1,6 @@
 package tema3.tema3A;
 
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,11 +22,15 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class EjemploActualicionGUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public EjemploActualicionGUI() {
 		
 		// Configuración de la ventana
 		setTitle("Selección de Aeropuertos");
-		setSize(400, 200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null); // Centrar la ventana
 
@@ -57,12 +62,27 @@ public class EjemploActualicionGUI extends JFrame {
 		panel.setLayout(new GridLayout(3, 2, 10, 10)); // 3 filas, 2 columnas, 10px de margen
 
 		// Añadir componentes al panel
-		panel.add(etiquetaOrigen);
-		panel.add(comboOrigen);
-		panel.add(etiquetaDestino);
-		panel.add(comboDestino);
+		JPanel panelEtiquetaOrigen = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panelEtiquetaOrigen.add(etiquetaOrigen);
+		panel.add(panelEtiquetaOrigen);
+		
+		JPanel panelComboOrigen = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panelComboOrigen.add(comboOrigen);
+		panel.add(panelComboOrigen);
+		
+		JPanel panelEtiquetaDestino = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panelEtiquetaDestino.add(etiquetaDestino);
+		panel.add(panelEtiquetaDestino);
+		
+		JPanel panelComboDestino = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		panelComboDestino.add(comboDestino);
+		panel.add(panelComboDestino);
+		
 		panel.add(new JLabel()); // Espacio vacío
-		panel.add(botonMostrar);
+		
+		JPanel panelBoton = new JPanel();
+		panelBoton.add(botonMostrar);
+		panel.add(panelBoton);
 
 		// Acción para mostrar la selección
 		botonMostrar.addActionListener(new ActionListener() {
@@ -85,7 +105,7 @@ public class EjemploActualicionGUI extends JFrame {
 				String origenSeleccionado = (String) comboOrigen.getSelectedItem();
 				
 				// obtenemos la lista de destinos para ese origen
-				List<String> destinos = mapaAeropuertos.get(comboOrigen.getSelectedItem());
+				List<String> destinos = mapaAeropuertos.get(origenSeleccionado);
 
 				// actualizamos el combobox de destinos cambiando su modelo de datos
 				comboDestino.setModel(new DefaultComboBoxModel<String>(destinos.toArray(new String[destinos.size()])));
@@ -95,6 +115,8 @@ public class EjemploActualicionGUI extends JFrame {
 		// Añadir el panel a la ventana
 		add(panel);
 
+		pack(); // ajustar al tamaño de los componentes
+		
 		// Hacer la ventana visible
 		setVisible(true);
 	}
