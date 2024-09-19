@@ -19,7 +19,12 @@ public class EjemploThreadAccesoConcurrente {
         
         // ESTE MÉTODO DEBE SER synchronized para que dos hilos no puedan 
         // realizar la operación de incremento "a la vez" sobre el mismo
-        // contador.
+        // contador. Esto es debido a que la operación += en realidad
+        // son varias operaciones (no es atómica) leer el valor, sumar 1
+        // al valor y actualizar la variable con el nuevo valor. Entre
+        // cualquiera de estas operaciones pasa un tiempo mayor que cero
+        // durente el que otro hilo puedo intentar modificar la misma variable
+        // produciendose la actualización incorrecta.
         synchronized public void increment() {
             value += 1;
         }
