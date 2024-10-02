@@ -20,14 +20,14 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-public class EjemploActualicionGUI extends JFrame {
+public class EjemploActualizacionGUI extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public EjemploActualicionGUI() {
+	public EjemploActualizacionGUI() {
 		
 		// Configuración de la ventana
 		setTitle("Selección de Aeropuertos");
@@ -132,7 +132,7 @@ public class EjemploActualicionGUI extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				new EjemploActualicionGUI();
+				new EjemploActualizacionGUI();
 			}
 		});
 	}
