@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.ListSelectionModel;
 import java.awt.BorderLayout;
@@ -65,6 +67,20 @@ public class EjemploModeloJList extends JFrame {
         mainPanel.add(list);
 
         add(mainPanel, BorderLayout.CENTER);
+        
+        // ejemplo de listener de selección que imprime el valor seleccionado
+        // usando una clase anónima para implementar la interfaz SelectionListener
+        // en este caso también se podría usar una expresión lambda ya que la
+        // interfaz tiene un único método (interfaz funcional)
+		list.addListSelectionListener(new ListSelectionListener() {
+			
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				if (!e.getValueIsAdjusting()) {
+					System.out.println("Seleccionado: " + list.getSelectedValue());
+				}
+			}
+		});
 
         pack();
         setVisible(true);
