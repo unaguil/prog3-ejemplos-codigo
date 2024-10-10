@@ -1,9 +1,28 @@
 package tema3.tema3A;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.GregorianCalendar;
+import java.util.List;
+
 import javax.swing.AbstractCellEditor;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -12,20 +31,6 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 
 import org.jdatepicker.JDatePicker;
-
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.GregorianCalendar;
-import java.util.List;
 
 /**
  * Este ejemplo muestra el uso del componente visual JTable
@@ -238,9 +243,13 @@ public class EjemploJTable extends JFrame {
         // un formato visual adecuado
         @Override
         public void setValue(Object value) {
+        	// el valor a mostrar en este celda
             LocalDate localTime = (LocalDate) value;
             if (localTime != null) {
+            	// establece el texto con el formato deseado
             	setText(localTime.format(formatter));
+            	// alineamos el texto a la derecha
+            	setHorizontalAlignment(JLabel.RIGHT);
             }
         }
     }
@@ -323,7 +332,38 @@ public class EjemploJTable extends JFrame {
         TableColumn birthdateColumn = table.getColumnModel().getColumn(2);
         birthdateColumn.setCellRenderer(new DateCellRenderer());
         birthdateColumn.setCellEditor(new DateCellEditor());
+       
+        // poner en negrita el texto de la cabecera de la tabla
+        table.getTableHeader().setFont(table.getTableHeader().getFont().deriveFont(java.awt.Font.BOLD));
+        
+        // cambiamos el renderer de la cabecera de la tabla para
+        // personalizar su aspecto, en este caso se usa una expresión lambda
+        // para implementar la interfaz TableCellRenderer
+        table.getTableHeader().setDefaultRenderer((jTable, value, isSelected, hasFocus, row, column) -> {
+            JLabel label = new JLabel(value.toString());
+            label.setFont(new Font("Arial", Font.BOLD, 14)); // Fuente personalizada
+            label.setForeground(Color.WHITE); // Color de texto
+            label.setBackground(Color.DARK_GRAY); // Color de fondo
+            label.setHorizontalAlignment(SwingConstants.CENTER); // Alineación centrada
+            label.setOpaque(true); // Permitir que el fondo sea visible
 
+            // Añadir borde a la celda de la cabecera
+            label.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+
+            return label;
+        });
+        
+        // evento de ratón para imprimir el valor de la celda
+        // en la que se hace click
+        table.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int row = table.rowAtPoint(e.getPoint());
+                int column = table.columnAtPoint(e.getPoint());
+                System.out.println("Valor de la celda: " + table.getValueAt(row, column));
+            }
+        });
+        
         // la tabla se añade en un scroll pane para poder
         // navegar por las filas
         JScrollPane scrollPane = new JScrollPane(table);
