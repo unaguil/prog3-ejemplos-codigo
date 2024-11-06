@@ -25,7 +25,9 @@ import javax.swing.JTextField;
  */
 public class EjemploJFormattedTextField extends JFrame {
 
-    public EjemploJFormattedTextField() {
+	private static final long serialVersionUID = 1L;
+
+	public EjemploJFormattedTextField() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Ejemplo Swing");
 
@@ -41,7 +43,9 @@ public class EjemploJFormattedTextField extends JFrame {
         // este método se llama cada vez que se introduce un carácter en el campo
         NumberFormatter formatoEntrada = new NumberFormatter(formatoVisual) {
             
-            @Override
+			private static final long serialVersionUID = 1L;
+
+			@Override
             public Object stringToValue(String text) throws ParseException {
 
                 if (text == null || text.length() == 0) {
@@ -75,8 +79,10 @@ public class EjemploJFormattedTextField extends JFrame {
 
         // configuración del campo de texto formateado para números reales con 5 enteros y 2 decimales
         NumberFormatter formateadorNumeroReal = new NumberFormatter(new DecimalFormat("####0.00")) {
+        	
+			private static final long serialVersionUID = 1L;
 
-            @Override
+			@Override
             public Object stringToValue(String text) throws ParseException {
                 if (text == null || text.length() == 0) {
                     return null;
@@ -108,7 +114,9 @@ public class EjemploJFormattedTextField extends JFrame {
         try {
            formateadorMascara = new MaskFormatter("##/##/####") {
 
-                // este método convierte la cadena de texto que introduce el usuario
+				private static final long serialVersionUID = 1L;
+
+				// este método convierte la cadena de texto que introduce el usuario
                 // en un objeto Date que será devuelto por el campo de texto cuando
                 // se llame al método getValue
                 @Override
