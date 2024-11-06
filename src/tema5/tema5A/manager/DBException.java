@@ -1,4 +1,4 @@
-package tema7.manager;
+package tema5.tema5A.manager;
 
 // Esta excepción personalizada es utilizada por la
 // clase DBManager para indicar distintos errores.

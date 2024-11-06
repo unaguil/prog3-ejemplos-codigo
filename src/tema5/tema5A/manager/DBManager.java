@@ -1,4 +1,4 @@
-package tema7.manager;
+package tema5.tema5A.manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
